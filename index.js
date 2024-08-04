@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.send("<h1>ยินดีต้อนรับ นี่คือ webhook สำหรับ Line Chatbot</h1>");
+  res.send("<h1>Welcome, this is a webhook for Line Chatbot</h1>");
 });
 
 app.post("/webhook", (req, res) => {
@@ -24,11 +24,11 @@ app.post("/webhook", (req, res) => {
   console.log("Dialogflow Request body: " + JSON.stringify(req.body));
 
   function welcome(agent) {
-    agent.add("ยินดีต้อนรับสู่แชทบอท!");
+    agent.add("Welcome to the chatbot!");
   }
 
   function fallback(agent) {
-    agent.add("ขออภัย, ฉันไม่เข้าใจที่คุณพูด.");
+    agent.add("Sorry, I didn't understand that.");
   }
 
   function bodyMassIndex(agent) {
@@ -84,5 +84,5 @@ app.post("/webhook", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("เซิร์ฟเวอร์ทำงานที่ http://localhost:" + port);
+  console.log("Server is running at  http://localhost:" + port);
 });
