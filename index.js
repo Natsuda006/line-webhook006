@@ -55,7 +55,7 @@ app.post("/webhook", (req, res) => {
     let width = agent.parameters.width;
     let length = agent.parameters.length;
     let result = width * length;
-    agent.add("พื้นที่ของสี่เหลี่ยมผืนผ้าขนาดกว้าง " + width + " ซม. และยาว " + length + " ซม. คือ " + result + " ตร.ซม.");
+    agent.add("พื้นที่ของสี่เหลี่ยมขนาดกว้าง " + width + " ซม. และยาว " + length + " ซม. คือ " + result + " ตร.ซม.");
   }
 
   function calculateTriangle(agent) {
