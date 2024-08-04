@@ -48,6 +48,39 @@ app.post("/webhook", (req, res) => {
     } else if (bmi > 30) {
       result = "คุณอ้วนเกินไป, ควรปรึกษาหมอ.";
     }
+     const flexMessage = {
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://bucket.ex10.tech/images/b9157603-527e-11ef-891c-0242ac120003/originalContentUrl.jpg",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "https://line.me/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "BMI",
+        "weight": "bold",
+        "size": "xl"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": []
+      }
+    ]
+  }
+}
     agent.add(result);
   }
 
